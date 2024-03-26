@@ -1,5 +1,6 @@
 Hello world the basic example
-line1
+line1_conflict Branch_exclude this
 line2
 line_3=>New branch
 Copyright branch
+Conflict branch_Include this
