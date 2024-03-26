@@ -1,6 +1,2 @@
 Hello world the basic example
-line1_Main branch_Include this
-line2
-line_3=>New branch
-Copyright branch
-Conflict branch_Include this
+Main branch working directory
