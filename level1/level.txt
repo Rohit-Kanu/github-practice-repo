@@ -4,3 +4,5 @@ In this file do not include any change from Main
 this file should have all sub branch change
 Github change
 Feature => DevBranch
+unstage vs stage
+rebase feature/dev
