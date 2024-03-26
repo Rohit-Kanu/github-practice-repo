@@ -5,4 +5,4 @@ this file should have all sub branch change
 Github change
 Feature => DevBranch
 unstage vs stage
-rebase feature/dev
+rebase feature/dev => This content should not be included
