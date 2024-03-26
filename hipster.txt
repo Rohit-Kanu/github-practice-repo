@@ -3,4 +3,4 @@ line1_Main branch_Include this
 line2
 line_3=>New branch
 Copyright branch
-main Branch_exclude this
+Conflict branch_Include this
