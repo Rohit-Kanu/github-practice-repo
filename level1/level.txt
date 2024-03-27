@@ -6,3 +6,4 @@ Github change
 Feature => DevBranch
 unstage vs stage
 rebase feature/dev => This content should not be included
+Test for stash changes
