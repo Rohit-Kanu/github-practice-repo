@@ -1,0 +1,18 @@
+{
+	"_Type": "Action.Type.RestService.SendRequest",
+	"Target": {
+        "Service": "/SAPAssetManager/Services/OnlineAssetManager.service",
+        "Path": "/OauthTokens(ParameterGroup='NONE',ParameterName='ACCESS_TOKEN',RFCDestination='NONE')",
+        "RequestProperties": {
+            "Method": "PATCH",
+            "Body": {
+                "AccessToken": "/SAPAssetManager/Rules/Forms/SDF/getStoredToken.js",
+                "RefreshToken": "/SAPAssetManager/Rules/Forms/SDF/getStoredToken.js"
+            },
+            "Headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+	"ProjectName": "ZSAPAssetManager",
+	"ApplicationName": "ZSAPAssetManager",
+	"ComponentVersion": "1.0",
+	"IntegrationPoints": [
+		{
+			"Source": "/SAPAssetManager/Pages/Overview.page",
+			"Target": "/ZSAPAssetManager/Pages/Overview.page"
+		}
+	]
+}
