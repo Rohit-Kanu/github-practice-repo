@@ -4,8 +4,16 @@
 	"ComponentVersion": "1.0",
 	"IntegrationPoints": [
 		{
-			"Source": "/SAPAssetManager/Pages/Overview.page",
-			"Target": "/ZSAPAssetManager/Pages/Overview.page"
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasurementDocumentsCreateChangeSet.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasurementDocumentsCreateChangeSet.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/i18n/i18n.properties",
+			"Target": "/SAPAssetManager/i18n/i18n.properties"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateFinalizeData.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateFinalizeData.js"
 		}
 	]
 }

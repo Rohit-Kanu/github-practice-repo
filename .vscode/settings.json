@@ -1,0 +1,9 @@
+{
+    "mdk.referenceApplications": [
+        {
+            "name": "SAPAssetManager",
+            "path": "/Users/i746269/Desktop/Rohit/SelfLearning/GIT/GITLearning/github-practice-repo/SAPAssetManager/Application.app",
+            "comp": "ZSAPAssetManager"
+        }
+    ]
+}

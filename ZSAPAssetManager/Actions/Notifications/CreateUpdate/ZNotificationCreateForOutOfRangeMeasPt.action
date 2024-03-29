@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target":
+	{
+		"EntitySet" : "MyNotificationHeaders",
+		"Service" : "/SAPAssetManager/Services/AssetManager.service"
+	},
+	"Properties": {},
+	"CreateLinks": "/ZSAPAssetManager/Rules/Notifications/CreateUpdate/ZNotificationLinksForOutOfRangeMeasPt.js"
+}
