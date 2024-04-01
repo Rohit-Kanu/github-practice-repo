@@ -14,6 +14,10 @@
 		{
 			"Source": "/ZSAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateFinalizeData.js",
 			"Target": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateFinalizeData.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/WorkOrders/ListView/FastFilters/WorkOrderFastFiltersItems.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/ListView/FastFilters/WorkOrderFastFiltersItems.js"
 		}
 	]
 }

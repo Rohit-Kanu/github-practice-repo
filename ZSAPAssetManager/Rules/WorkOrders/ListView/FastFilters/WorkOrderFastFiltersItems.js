@@ -1,5 +1,5 @@
-import WOFastFilters from '../../../FastFilters/MultiPersonaFilters/WOFastFilters';
-import libCom from '../../../Common/Library/CommonLibrary';
+import WOFastFilters from '../../../../../SAPAssetManager/Rules/FastFilters/MultiPersonaFilters/WOFastFilters';
+import libCom from '../../../../../SAPAssetManager/Rules/Common/Library/CommonLibrary';
 
 export default function WorkOrderFastFiltersItems(context) {
     let WOFastFiltersClass = new WOFastFilters(context);
@@ -18,7 +18,7 @@ export default function WorkOrderFastFiltersItems(context) {
             oFilterArr.forEach(item => {
                 if(item._label == 'Due Date'){
                     let dueDateLabel = item._filterItemsDisplayValue[0];
-                    if(libCom.isDefined(dueDateLabel)){
+                    if(libCom.isDefined(dueDateLabel) && (dueDateLabel.includes('AM') || dueDateLabel.includes('PM'))){
                         dueDateChangedLbl = getFilterStartAndEndDate(dueDateLabel);
                         item._filterItemsDisplayValue[0] = dueDateChangedLbl;
                     }
@@ -80,6 +80,6 @@ function getFilterStartAndEndDate(filterStr){
     arrStrResult.push(unformattedEndDate.substring(0,secondCommmaValueIdx));//Get the end date & month
     arrStrResult.push(unformattedEndDate.substring(secondCommmaValueIdx + 1, secondCommmaValueIdx + 6));//Get the end date year
 
-    arrStrResult.join('');
-    return arrStrResult;
+    let strDateArr = arrStrResult.toString();
+    return strDateArr.replaceAll(',', ' ');
 }
