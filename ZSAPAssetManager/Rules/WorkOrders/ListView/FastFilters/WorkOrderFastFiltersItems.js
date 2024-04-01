@@ -13,6 +13,8 @@ export default function WorkOrderFastFiltersItems(context) {
             for filters: filter name, filter value, filter property (if the value is not a complex query), filter group (combines multiple filters with "or"), visible
             for sortes: caption, value, visible
          */
+
+            //(Rohit) => Changes to handle the due date should only the date instead of date & time
             let oFilterArr = context.filters;
             let dueDateChangedLbl = '';
             oFilterArr.forEach(item => {
