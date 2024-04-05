@@ -353,8 +353,9 @@ function recordReadings(context) {
                             return Promise.resolve();
                         }
                     });
-                }//(Rohit) => Trigger the check if reading out of range & if yes then create notification 
+                }
             }).then(async () => {
+                //TAQA(SSAM-E009) => Trigger Notification creation process in quant reading out of limit
                 let HasReadingValue = hasReading(context);
                 let readingVal = HasReadingValue ? readingValue(context) : '';
                await measuringPtOutOfRangeLib.createNotification(context, HasReadingValue, readingVal, sectionBinding);

@@ -6,5 +6,6 @@
 		"Service" : "/SAPAssetManager/Services/AssetManager.service"
 	},
 	"Properties": {},
-	"CreateLinks": "/ZSAPAssetManager/Rules/Notifications/CreateUpdate/ZNotificationLinksForOutOfRangeMeasPt.js"
+	"CreateLinks": "/ZSAPAssetManager/Rules/Notifications/CreateUpdate/ZNotificationLinksForOutOfRangeMeasPt.js",
+	"OnSuccess": "/ZSAPAssetManager/Rules/Notifications/CreateUpdate/ZNotificationCreateSetDefaultStatus.js"
 }

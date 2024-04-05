@@ -14,6 +14,14 @@
 		{
 			"Source": "/ZSAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateFinalizeData.js",
 			"Target": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateFinalizeData.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsNav.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsNav.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCQueryOptions.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCQueryOptions.js"
 		}
 	]
 }

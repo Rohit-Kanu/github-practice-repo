@@ -3,46 +3,45 @@
 * @param {IClientAPI} clientAPI
 */
 import notifCreate from '../Notifications/CreateUpdate/ZNotificationCreateForOutOfRangeMeasPt';
-import empEnteries from '../../../SAPAssetManager/Rules/Notifications/EMP/CreateEMPEntries';
 import libLocal from '../../../SAPAssetManager/Rules/Common/Library/LocalizationLibrary';
+import libCom from '../../../SAPAssetManager/Rules/Common/Library/CommonLibrary';
 
 export default class ZMeasuringPointOutOfRangeLibrary {
 
-    static createNotification(pageClientAPI, HasReadingValue, readingVal, binding) {
+     //TAQA(SSAM-E009) => Check if enetered reading is within range or not
+     static createNotification(pageClientAPI, HasReadingValue, readingVal, measuringPtbinding) {
         if (HasReadingValue) {
-            let isLowerReadingValid = this.evalReadingGreaterThanEqualToLowerRange(pageClientAPI, readingVal, binding);
-            let isUpperReadingValid = this.evalReadingLessThanEqualToUpperRange(pageClientAPI, readingVal, binding);
+            let isLowerReadingValid = this.evalReadingGreaterThanEqualToLowerRange(pageClientAPI, readingVal, measuringPtbinding);
+            let isUpperReadingValid = this.evalReadingLessThanEqualToUpperRange(pageClientAPI, readingVal, measuringPtbinding);
+            measuringPtbinding.ZUserInputReadingVal = readingVal;
+            libCom.setStateVariable(pageClientAPI, 'ZMeasuringPtObj', measuringPtbinding);
             if (isLowerReadingValid && isUpperReadingValid) {
                 return Promise.resolve();
             } else {
-                ////(Rohit) => Notification creation with default value
-                return notifCreate(pageClientAPI).then(() => {
-                    return empEnteries(pageClientAPI);//(Rohit) => For emp entery and notif default status
-                });
+                return notifCreate(pageClientAPI);
             }
         }
         return Promise.resolve();
     }
-    
-    //(Rohit) => Check value that is not lesser than lower range
+
     static evalReadingGreaterThanEqualToLowerRange(pageClientAPI, reading, binding) {
         return (libLocal.toNumber(pageClientAPI, reading) >= libLocal.toNumber(pageClientAPI, binding.LowerRange));
     }
-    //(Rohit) => Check value that it is not greater than lower range
     static evalReadingLessThanEqualToUpperRange(pageClientAPI, reading, binding) {
         return (libLocal.toNumber(pageClientAPI, reading) <= libLocal.toNumber(pageClientAPI, binding.UpperRange));
     }
 
-    static getEquipment(pageClientAPI){
-        if(pageClientAPI.binding['@odata.type'] == '#sap_mobile.MyEquipment'){
-            return pageClientAPI.binding.EquipId;
-        }
-        return '';
-    }
-    static getFunctionalLocation(pageClientAPI){
-        if(pageClientAPI.binding['@odata.type'] == '#sap_mobile.MyEquipment' || pageClientAPI.binding['@odata.type'] == '#sap_mobile.MyFunctionalLocation'){
-            return pageClientAPI.binding.FuncLocId;
-        }
-        return '';
+    //TAQA(SSAM-E009) => Generate long text for newly created out of range notification 
+    static concatenatedNotes(pageClientAPI, measuringPtObj) {
+        let arrNote = [];
+        arrNote.push(pageClientAPI.localizeText('z_meas_reading_for_notes'));
+       // arrNote.push(measuringPtObj.ZUserInputReadingVal);
+       arrNote.push(measuringPtObj.Point);
+        arrNote.push(' ');
+        arrNote.push(pageClientAPI.localizeText('z_outside_range_limit'));
+        arrNote.push(`${measuringPtObj.LowerRange} - ${measuringPtObj.UpperRange}`);
+        //arrNote.push(pageClientAPI.localizeText('z_meas_doc'));
+        let noteStr = arrNote.join('');
+        return noteStr.toString();
     }
 }
