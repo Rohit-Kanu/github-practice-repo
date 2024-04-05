@@ -9,7 +9,8 @@ import libCom from '../../../SAPAssetManager/Rules/Common/Library/CommonLibrary'
 export default class ZMeasuringPointOutOfRangeLibrary {
 
      //TAQA(SSAM-E009) => Check if enetered reading is within range or not
-     static createNotification(pageClientAPI, HasReadingValue, readingVal, measuringPtbinding) {
+     static createNotification(pageClientAPI, HasReadingValue, readingVal, mpBinding) {
+        let measuringPtbinding = mpBinding['@odata.type'] =="#sap_mobile.MeasurementDocument" ? mpBinding.MeasuringPoint : mpBinding;
         if (HasReadingValue) {
             let isLowerReadingValid = this.evalReadingGreaterThanEqualToLowerRange(pageClientAPI, readingVal, measuringPtbinding);
             let isUpperReadingValid = this.evalReadingLessThanEqualToUpperRange(pageClientAPI, readingVal, measuringPtbinding);

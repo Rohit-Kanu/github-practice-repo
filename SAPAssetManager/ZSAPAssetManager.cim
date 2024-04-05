@@ -22,6 +22,10 @@
 		{
 			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCQueryOptions.js",
 			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCQueryOptions.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Pages/Measurements/MeasuringPointHistoryListView.page",
+			"Target": "/SAPAssetManager/Pages/Measurements/MeasuringPointHistoryListView.page"
 		}
 	]
 }
