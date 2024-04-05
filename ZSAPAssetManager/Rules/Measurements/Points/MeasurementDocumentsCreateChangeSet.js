@@ -356,8 +356,11 @@ function recordReadings(context) {
                 }
             }).then(async () => {
                 //TAQA(SSAM-E009) => Trigger Notification creation process in quant reading out of limit
-                let HasReadingValue = hasReading(context);
-                let readingVal = HasReadingValue ? readingValue(context) : '';
+                let HasReadingValue = '';
+                let readingVal = section.getControl('ReadingSim').getValue();
+                if(reading){
+                    HasReadingValue = 'X';
+                }
                await measuringPtOutOfRangeLib.createNotification(context, HasReadingValue, readingVal, sectionBinding);
             });
         } else {
