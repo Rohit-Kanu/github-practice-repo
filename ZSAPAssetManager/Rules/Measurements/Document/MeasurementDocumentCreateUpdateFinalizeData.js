@@ -10,9 +10,11 @@ export default function MeasurementDocumentCreateUpdateFinalizeData(pageClientAP
     //if in update, run update action else run create action
     /**Implementing our Logger class*/
     let measDocObj = {};
+    if(pageClientAPI.binding['@odata.type'] == "#sap_mobile.MeasurementDocument"){
     measDocObj.Point = pageClientAPI.binding.Point;
     measDocObj.RecordedValue = (pageClientAPI.binding.ReadingValue).toString();
     measDocObj['@odata.type'] = pageClientAPI.binding['@odata.type'];
+    }
     
     Logger.debug(pageClientAPI.getGlobalDefinition('/SAPAssetManager/Globals/Logs/CategoryMeasurementDocuments.global').getValue(), 'Starting MeasurementDocumentCreateUpdateFinalizeData');
     let HasReadingValue = hasReading(pageClientAPI);
