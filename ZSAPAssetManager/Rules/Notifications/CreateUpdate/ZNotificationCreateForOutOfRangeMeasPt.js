@@ -54,6 +54,7 @@ export default function ZNotificationCreateForOutOfRangeMeasPt(clientAPI) {
             // Store created notification
             ComLib.setStateVariable(clientAPI, 'CreateNotification', JSON.parse(actionResult.data));
             ComLib.setStateVariable(clientAPI, 'ZNotifNotes', note);
+            // //TAQA(SSAM-E009) => Create note for newly added local notification
             return clientAPI.executeAction('/ZSAPAssetManager/Actions/Notes/Notifications/ZNoteCreateForMeasPtOutOfRangeNotification.action');
         }).catch(() => {
             Logger.error('Notification', err);

@@ -5,7 +5,7 @@ export default function MeasuringPointDetailsNav(context) {
     let readLink = context.binding['@odata.readLink'];
     let pageProxy = context.getPageProxy();
     let actionContext = pageProxy.getActionBinding();
-    ////TAQA(SSAM-E009) => Included Equipment & FL in expand query 
+    //TAQA(SSAM-E009) => Included Equipment & FL in expand query 
     let query = '$expand=Equipment,FunctionalLocation,MeasurementDocs,WorkOrderTool&$select=*,Point,PointDesc,CharName,UoM,IsCounter,CodeGroup,CatalogType,MeasurementDocs/ReadingDate,MeasurementDocs/ReadingTime,MeasurementDocs/ReadingValue,MeasurementDocs/IsCounterReading,MeasurementDocs/CounterReadingDifference,MeasurementDocs/MeasurementDocNum,MeasurementDocs/CodeGroup';
     if (readLink && readLink.indexOf('MyWorkOrderOperations') !== -1) {
         return context.read('/SAPAssetManager/Services/AssetManager.service', actionContext['@odata.readLink'] + '/PRTPoint', [], query).then(Result => {

@@ -1,0 +1,14 @@
+{
+	"Target":
+	{
+		"EntitySet" : "MyNotificationHeaders",
+		"Service" : "/SAPAssetManager/Services/AssetManager.service",
+		"ReadLink" : "#Property:ZNotifReadLink"
+	},
+	"Headers":
+	{
+        "OfflineOData.TransactionID": "#Property:ZNotificationNumber"
+	},
+    "_Type": "Action.Type.ODataService.DeleteEntity",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/DeleteEntityFailureMessage.action"
+}

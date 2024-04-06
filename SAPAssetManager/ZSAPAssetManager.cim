@@ -26,6 +26,22 @@
 		{
 			"Source": "/ZSAPAssetManager/Pages/Measurements/MeasuringPointHistoryListView.page",
 			"Target": "/SAPAssetManager/Pages/Measurements/MeasuringPointHistoryListView.page"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Pages/Measurements/MeasurementDocumentCreateUpdate.page",
+			"Target": "/SAPAssetManager/Pages/Measurements/MeasurementDocumentCreateUpdate.page"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Pages/Equipment/EquipmentDetails.page",
+			"Target": "/SAPAssetManager/Pages/Equipment/EquipmentDetails.page"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasuringPointQuery.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointQuery.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/PointDetailsOnReturning.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/PointDetailsOnReturning.js"
 		}
 	]
 }

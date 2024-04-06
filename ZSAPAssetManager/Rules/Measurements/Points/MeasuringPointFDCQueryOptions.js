@@ -37,7 +37,6 @@ function roundsQueryOptions(context) {
      *  Equipment/FLOC associated Work Order and Operation is stored on Client Data
      */
 
-    //(Rohit) => Add Equipment & FunctionalLocation in expand
     return context.read('/SAPAssetManager/Services/AssetManager.service', binding['@odata.readLink'], [],
         '$expand=Equipment/MeasuringPoints,FunctionalLocation/MeasuringPoints,' +
         'Operations/EquipmentOperation/MeasuringPoints,Operations/FunctionalLocationOperation/MeasuringPoints,' +
@@ -121,7 +120,7 @@ export default function MeasuringPointFDCQueryOptions(context, actionBinding) {
                         operationQueryOptions(context);
             }
             case context.getGlobalDefinition('/SAPAssetManager/Globals/ODataTypes/Equipment.global').getValue():
-                //(Rohit)=> Expand Equipment & FL
+                // //TAQA(SSAM-E009) => Added Equipment,FunctionalLocation in expand for measuring pt
                 return Promise.resolve('$expand=Equipment,FunctionalLocation,MeasurementDocs&$orderby=SortField');
             case context.getGlobalDefinition('/SAPAssetManager/Globals/ODataTypes/FunctionalLocation.global').getValue():
                 return Promise.resolve('$expand=Equipment,FunctionalLocation,MeasurementDocs&$orderby=SortField');

@@ -11,6 +11,7 @@ import Logger from '../../../../SAPAssetManager/Rules/Log/Logger';
 export default function ZNotificationCreateSetDefaultStatus(context) {
 	let promises = [];
 
+	//TAQA(SSAM-E009) => Create the default "RECIEVED" status for local notification
 	promises.push(MobileStatusSetReceivedObjectKey(context));
 
 	return Promise.all(promises).then(results => {
