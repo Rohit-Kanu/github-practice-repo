@@ -1,0 +1,17 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Headers": {
+        "OfflineOData.NonMergeable": "{#Page:FormRunner/#ClientData/FormData/NonMergable}"
+    },
+    "Target": {
+        "EntitySet": "DynamicFormInstances",
+        "Service": "/SAPAssetManager/Services/AssetManager.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "Content": "{#Page:FormRunner/#ClientData/FormData/Data}",
+        "FormStatus": "{#Page:FormRunner/#ClientData/FormData/Status}"
+    },
+    "OnSuccess": "/SAPAssetManager/Rules/Forms/SDF/FormUpdateCloseOnCompleted.js",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/UpdateEntityFailureMessage.action"
+}

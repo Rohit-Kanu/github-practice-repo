@@ -1,0 +1,55 @@
+{
+	"ProjectName": "ZSAPAssetManager",
+	"ApplicationName": "ZSAPAssetManager",
+	"ComponentVersion": "1.0",
+	"IntegrationPoints": [
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasurementDocumentsCreateChangeSet.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasurementDocumentsCreateChangeSet.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/i18n/i18n.properties",
+			"Target": "/SAPAssetManager/i18n/i18n.properties"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateFinalizeData.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Document/MeasurementDocumentCreateUpdateFinalizeData.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsNav.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsNav.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCQueryOptions.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointFDCQueryOptions.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Pages/Measurements/MeasuringPointHistoryListView.page",
+			"Target": "/SAPAssetManager/Pages/Measurements/MeasuringPointHistoryListView.page"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Pages/Measurements/MeasurementDocumentCreateUpdate.page",
+			"Target": "/SAPAssetManager/Pages/Measurements/MeasurementDocumentCreateUpdate.page"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Pages/Equipment/EquipmentDetails.page",
+			"Target": "/SAPAssetManager/Pages/Equipment/EquipmentDetails.page"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/MeasuringPointQuery.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointQuery.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/Measurements/Points/PointDetailsOnReturning.js",
+			"Target": "/SAPAssetManager/Rules/Measurements/Points/PointDetailsOnReturning.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/FastFilters/MultiPersonaFilters/EquipmentFastFilters.js",
+			"Target": "/SAPAssetManager/Rules/FastFilters/MultiPersonaFilters/EquipmentFastFilters.js"
+		},
+		{
+			"Source": "/ZSAPAssetManager/Rules/FastFilters/FastFilters.js",
+			"Target": "/SAPAssetManager/Rules/FastFilters/FastFilters.js"
+		}
+	]
+}

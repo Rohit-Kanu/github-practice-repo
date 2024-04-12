@@ -1,0 +1,26 @@
+{
+    "_Type": "Action.Type.ODataService.CreateEntity",
+    "Target": {
+        "EntitySet": "MyNotifHeaderLongTexts",
+        "Service": "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "Properties": {
+        "NotificationNumber": "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js",
+        "NewTextString": "/ZSAPAssetManager/Rules/Notifications/Notes/ZGetNotifNotesForCreateUpdate.js",
+        "TextString": "/ZSAPAssetManager/Rules/Notifications/Notes/ZGetNotifNotesForCreateUpdate.js"
+    },
+    "Headers": {
+        "OfflineOData.RemoveAfterUpload": "true",
+        "OfflineOData.TransactionID": "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js"
+    },
+    "OnFailure": "/SAPAssetManager/Actions/Notes/NoteCreateFailureMessage.action",
+     "CreateLinks":
+    [{
+        "Property": "Notification",
+        "Target":
+        {
+            "EntitySet": "MyNotificationHeaders",
+            "ReadLink": "/ZSAPAssetManager/Rules/Notifications/Notes/ZLastCreatedLocalNotifReadLink.js"
+        }
+    }]
+}
